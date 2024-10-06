@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="cstylesheet.css">
+        <title>Calendar</title>
+    </head>
+
+    <body>
+        <nav id="nav">
+            <ul>
+                <a href="home.html"><li>HOME</li></a>
+                <a href="calendar.html"><li>CALENDAR</li></a>
+                <a href="booking.html"><li>RENTALS</li></a>
+                <a href="tickets.html"><li>TICKETS</li></a>
+                <a href="information.html"><li>INFORMATION</li></a>
+            </ul>
+        </nav>
+
+        <div class="calendar">
+            <div class="header">
+                <button id="prevBtn">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="monthYear" id="monthYear"></div>
+                <button id="nextBtn">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="days">
+                <div class="day">Mon</div>
+                <div class="day">Tue</div>
+                <div class="day">Wed</div>
+                <div class="day">Thu</div>
+                <div class="day">Fri</div>
+                <div class="day">Sat</div>
+                <div class="day">Sun</div>
+            </div>
+            <div class="dates" id="dates"></div>
+        </div>
+
+        <div class="events-box">
+            <p>October 5th: Varsity Basketball Game 4-5pm</p>
+            <p>October 7th: Volleyball Game 4-5pm</p>
+            <p>October 14th: Volleyball Game 4-5pm</p>
+            <p>October 26th: Homecoming 7-10pm</p>
+            <p>November 10th: Annual County Trade Show 8am-3pm</p>
+            <p>November 22rd: Thanksgiving Party 3-4:30pm</p>
+            <p>Want to book an event?</p>
+            <div class="button-calendar"><p>Rent our gymnasium now!</p></div>
+            <p>Want to get tickets?</p>
+            <div class="button-calendar"><p>Book tickets now!</p></div>
+        </div>
+        <script>
+            const monthYearElement = document.getElementById('monthYear');
+            const datesElement = document.getElementById('dates');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            let currentDate = new Date();
+
+            const updateCalendar = () => {
+                const currentYear = currentDate.getFullYear();
+                const currentMonth = currentDate.getMonth();
+
+                const firstDay = new Date(currentYear, currentMonth, 0);
+                const lastDay = new Date(currentYear, currentMonth + 1, 0);
+                const totalDays = lastDay.getDate();
+                const firstDayIndex = firstDay.getDay();
+                const lastDayIndex = lastDay.getDay();
+
+                const monthYearString = currentDate.toLocaleString('default', {month: 'long', year: 'numeric'});
+                monthYearElement.textContent = monthYearString;
+
+                let datesHTML = '';
+
+                for (let i = firstDayIndex; i > 0; i--) {
+                    const prevDate = new Date(currentYear, currentMonth, 0 - i + 1);
+                    datesHTML += `<div class="date inactive">${prevDate.getDate()}</div>`;
+                }
+
+                for (let i = 1; i <= totalDays; i++) {
+                    const date = new Date(currentYear, currentMonth, i);
+                    const activeClass = date.toDateString() === new Date().toDateString() ? 'active' : '';
+                    datesHTML += `<div class="date ${activeClass}">${i}</div>`;
+                }
+
+                for (let i = 1; i <= 7 - lastDayIndex; i ++) {
+                    const nextDate = new Date(currentYear, currentMonth + 1, i);
+                    datesHTML += `<div class="date inactive">${nextDate.getDate()}</div>`;
+                }
+
+                datesElement.innerHTML = datesHTML;
+            }
+
+            prevBtn.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() - 1);
+                updateCalendar();
+            })
+
+            nextBtn.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() + 1);
+                updateCalendar();
+            })
+
+            updateCalendar();  
+        </script>
+    </body>
+</html>

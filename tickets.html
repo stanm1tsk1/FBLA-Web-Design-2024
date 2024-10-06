@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Baskervville:ital@0;1&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="stylesheet.css">
+       <link rel="icon" type="image/x-icon" href="https://codehs.com/uploads/d754c6e42b232a8582f971871fb56d8f">
+    </head>
+    
+    <body>
+       <nav id="nav">
+        <ul>
+            <a href="home.html"><li>HOME</li></a>
+            <a href="calendar.html"><li>CALENDAR</li></a>
+            <a href="booking.html"><li>RENTALS</li></a>
+            <a href="tickets.html"><li>TICKETS</li></a>
+            <a href="information.html"><li>INFORMATION</li></a>
+         </ul>
+        </nav>
+
+        <section id="tickets">
+            <p class="seats">WARNING: WHERE YOU WILL BE SITTING IN THE SECTION BOOKED IS FIRST COME FIRST SERVE</p>
+            <h2 id="tickets" >Purchase Tickets</h2>
+            <form action="buy.html">
+            <label for="event">Select Event:</label>
+            <select id="event" name="event">
+                <option value="concert">Live Concert</option>
+                <option value="sport">Sporting Events</option>
+                <option value="trade-show">Trade Show</option>
+                <option value="other">Community Events</option>
+            </select>
+            <br>
+            <label for="section">Select Section:</label>
+            <select id="section">
+                <option value="section-one">Section 1</option>
+                <option value="section-two">Section 2</option>
+                <option value="section-three">Section 3</option>
+                <option value="section-four">Section 4</option>
+                <option value="section-five">Section 5</option>
+                <option value="section-six">Section 6</option>
+                <option value="section-seven">Section 7</option>
+                <option value="section-eight">Section 8</option>
+                <option value="section-nine">Section 9</option>
+                <option value="section-ten">Section 10</option>
+                <option value="section-eleven">Section 11</option>
+                <option value="section-twelve">Section 12</option>
+            </select>
+            <br>
+            <label for="quantity">Number of Tickets:</label>
+            <input type="number" id="quantity" min="1" max="10" required>
+            <br>
+            <img src="https://codehs.com/uploads/5aa9b39f1bf76e8498556d3e4fe87430" height="575" width="400">
+            <br>
+            <br>
+            <input type="submit" value="Buy Tickets" href="buy.html">
+       </section>
+    </body>
+   
+</html>

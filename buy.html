@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Baskervville:ital@0;1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    
+    <body>
+        <nav id="nav">
+            <ul>
+                <a href="home.html"><li>HOME</li></a>
+                <a href="calendar.html"><li>CALENDAR</li></a>
+                <a href="booking.html"><li>RENTALS</li></a>
+                <a href="tickets.html"><li>TICKETS</li></a>
+                <a href="information.html"><li>INFORMATION</li></a>
+             </ul>
+        </nav>
+        <div class="spacer"></div>
+        <section class="buy-tickets">
+        <h2 id="card">Credit Card Information</h2>
+        <br>
+        <form action="conformation.html">
+            <label for="cardholder-name">Cardholder Name:</label>
+            <input type="text" name="cardholder-name" placeholder="name" required>
+        <br>
+            <label for="card-number">Card Number:</label>
+            <input type="text" name="card-number" maxlength="16" placeholder="0000 0000 0000 0000" required>
+        <br>
+            <label for="expiration-date">Expiration Date:</label>
+            <input type="text" name="expiration-date" placeholder="MM/YY" maxlength="5" required>
+        <br>
+            <label for="cvv">CVV:</label>
+            <input type="text" name="cvv" maxlength="3" placeholder="123" required>
+        <br>
+
+        <input type="submit" value="Book Event" href="conformation.html">
+        </section>
+        
+    </body>
+</html>

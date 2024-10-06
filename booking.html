@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Baskervville:ital@0;1&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="stylesheet.css">
+       <link rel="icon" type="image/x-icon" href="https://codehs.com/uploads/d754c6e42b232a8582f971871fb56d8f">
+    </head>
+    
+    <body>
+       <nav id="nav">
+            <ul>
+                <a href="home.html"><li>HOME</li></a>
+                <a href="calendar.html"><li>CALENDAR</li></a>
+                <a href="booking.html"><li>RENTALS</li></a>
+                <a href="tickets.html"><li>TICKETS</li></a>
+                <a href="information.html"><li>INFORMATION</li></a>
+            </ul>
+        </nav> 
+        <div class="spacer"></div>
+        
+        <title>Arena Booking System</title>
+        <img src="https://codehs.com/uploads/5aa9b39f1bf76e8498556d3e4fe87430" height="575" width="400">
+    
+        <h1>Arena Booking System</h1>
+        <form action="buy.html">
+            <div class="event-select">
+                <label for="event">Select an Event:</label>
+                <select id="event" name="event">
+                    <option value="concert">Concert</option>
+                    <option value="sports">Sports Event</option>
+                    <option value="theater">Trade Shows</option>
+                    <option value="community">Community Events</option>
+                </select>
+                <br>
+                <label for="quantity">Number of Hours:</label>
+                <input type="number" id="quantity" min="1" max="48" required>
+                <br>
+                <input type="submit" value="Book Event" href="buy.html">
+            </div>
+    </body>
+        
+</html>
